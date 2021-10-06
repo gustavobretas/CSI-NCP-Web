@@ -1,0 +1,39 @@
+/* Rules for all web pages */
+
+.downtown {
+  font-family: Helvetica, sans-serif;
+}
+.eastLawrence {
+  font-family: "Times New Roman", serif;
+}
+.westLawrence {
+  font-family: cursive;
+  line-height: 1.2em;
+}
+.ku {
+  font-family: monospace;
+  font-weight: bold;
+}
+span.title {
+  font-variant: small-caps;
+}
+span.opportunity {
+  font-style: italic;
+}
+
+body {
+  background-color: azure;
+  padding: 10px;
+}
+h1,
+h2 {
+  margin: 0px;
+  background-color: lightgreen;
+  padding: 10px;
+  text-align: center;
+}
+p {
+  background-color: hsl(120, 80%, 90%); /*lighter lightgreen*/
+  padding: 0px 20px;
+  text-align: justify;
+}
