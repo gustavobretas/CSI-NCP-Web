@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Gustavo Bretas Eufrazio" />
+    <meta name="description" content="AD110 Project 3 Resolution" />
+    <title>World Weather - AD110 Project 3</title>
+  </head>
+  <style>
+    img {
+      width: 50%;
+      height: 50%;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    a:hover {
+      background-color: silver;
+    }
+    a {
+      text-decoration: none;
+      padding: none;
+    }
+    .table {
+      display: flex;
+      width: 400px;
+      height: 100px;
+    }
+    .continent {
+      width: 45%;
+    }
+    .city {
+        margin: 1rem;
+    }
+    p {
+        margin: 0px;
+    }
+  </style>
+  <body>
+    <header>
+      <h1>World Weather</h1>
+      <nav>
+        <a href="#NorthAmerica">North America</a> |
+        <a href="#Europe">Europe</a> |
+        <a href="#Asia">Asia</a>
+      </nav>
+    </header>
+    <img
+      src="https://www.worldatlas.com/r/w960-q80/upload/52/23/07/shutterstock-688946812.jpg"
+      alt="Seasons of the Year"
+    />
+    <div id="NorthAmerica" class="table">
+      <div class="continent">
+        <h2>North America</h2>
+      </div>
+      <div class="city">
+        <p><a href="https://weather.com/weather/today/l/bf217d537cc1c8074ec195ce07fb74de3c1593caa6033b7c3be4645ccc5b01de" target="_blank">Boston, United States</a></p>
+        <p><a href="https://weather.com/weather/today/l/3881cd527264bc7c99b6b541473c0085e75aa026b6bd99658c56ad9bb55bd96e" target="_blank">Miami, United States</a></p>
+        <p><a href="https://weather.com/weather/today/l/d8ccf908e3c4c748e232720575df7cdbca6e0f1b412bca8595d8a28d0c28e8bc" target="_blank">Toronto, Canada</a></p>
+      </div>
+    </div>
+    <div id="Europe" class="table">
+      <div class="continent">
+        <h2>Europe</h2>
+      </div>
+      <div class="city">
+        <p><a href="https://weather.com/weather/today/l/5ca23443513a0fdc1d37ae2ffaf5586162c6fe592a66acc9320a0d0536be1bb9" target="_blank">Berlin, Germany</a></p>
+        <p><a href="https://weather.com/weather/today/l/1a8af5b9d8971c46dd5a52547f9221e22cd895d8d8639267a87df614d0912830" target="_blank">Paris, France</a></p>
+        <p><a href="https://weather.com/weather/today/l/1d1a251383dc0d1bdbfb8efbc155374b376eff6f5232f36110b823e47362866e" target="_blank">Rome, Italy</a></p>
+      </div>
+    </div>
+
+    <div id="Asia" class="table">
+      <div class="continent">
+        <h2>Asia</h2>
+      </div>
+      <div class="city">
+        <p><a href="https://weather.com/weather/today/l/71ca347e2948ee9490525aa5433fa91da6973ae51ea0f765fbe8e85b9f16c5df" target="_blank">Beijing, China</a></p>
+        <p><a href="https://weather.com/weather/today/l/4ba28384e2da53b2861f5b5c70b7332e4ba1dc83e75b948e6fbd2aaceeeceae3" target="_blank">Tokyo, Japan</a></p>
+      </div>
+    </div>
+  </body>
+</html>
