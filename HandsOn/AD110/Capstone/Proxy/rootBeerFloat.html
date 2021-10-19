@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="Gustavo Eufrazio" />
+		<title>Root Beer Float Maker</title>
+	</head>
+	<style>
+		#main {
+			display: inline-flex;
+		}
+		section {
+			display: flex;
+		}
+		fieldset {
+			margin-right: 20px;
+		}
+		#divRecipe {
+			background-color: brown;
+			color: white;
+			width: 250px;
+			height: 150px;
+			border: 2px solid brown;
+			padding: 10px;
+			font-size: 20px;
+		}
+		button {
+			padding: 5px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		img {
+			width: 300px;
+		}
+	</style>
+
+	<body>
+		<header>
+			<h1>Root Beer Float Maker</h1>
+		</header>
+		<div id="main">
+			<div>
+				<section>
+					<div class="icecream">
+						<fieldset class="checkbox">
+							<legend>Ice Creams</legend>
+							<input type="checkbox" name="iceCream" id="Vanilla" />
+							<label for="Vanilla">Vanilla</label><br />
+							<input type="checkbox" name="iceCream" id="Chocolate" />
+							<label for="Chocolate">Chocolate</label><br />
+							<input type="checkbox" name="iceCream" id="Coffee" />
+							<label for="Coffee">Coffee</label>
+						</fieldset>
+					</div>
+					<div class="beer">
+						<fieldset>
+							<legend>Root Beers</legend>
+							<input type="radio" name="rootBeer" id="Barqs" value="Barq's" />
+							<label for="Barqs">Barq's</label><br />
+							<input type="radio" name="rootBeer" id="AW" value="A&W" />
+							<label for="AW">A&W</label><br />
+							<input type="radio" name="rootBeer" id="Dads" value="Dad's" />
+							<label for="Dads">Dad's</label><br />
+							<input type="radio" name="rootBeer" id="IBC" value="IBC" />
+							<label for="IBC">IBC</label><br />
+						</fieldset>
+					</div>
+				</section>
+				<button onclick="btnRecipeOnClick()">I'm ready to make my float!</button>
+				<div id="divRecipe" hidden></div>
+			</div>
+			<aside>
+				<img
+					src="https://bloximages.chicago2.vip.townnews.com/herald-review.com/content/tncms/assets/v3/editorial/6/76/67689720-78da-5fa1-b17a-e9479df649b1/57eca1b47cbd5.image.jpg"
+					alt="Root Beer Mug"
+				/>
+			</aside>
+		</div>
+		<script>
+			function btnRecipeOnClick() {
+				document.getElementById("divRecipe").hidden = true;
+				if (
+					(!document.getElementById("Vanilla").checked &&
+						!document.getElementById("Chocolate").checked &&
+						!document.getElementById("Coffee").checked) ||
+					document.querySelector('input[name="rootBeer"]:checked') == null
+				) {
+					alert("You must select at least one ice cream flavor, and you must select one root beer brand.");
+				} else {
+					let icecream = "";
+					document.querySelectorAll('input[type="checkbox"]:checked').forEach((element) => {
+						icecream += `${icecream == "" ? "" : ", "}${element.id}`;
+					});
+					document.getElementById(
+						"divRecipe"
+					).innerHTML = `Recipe <br> In a glass mug, add one scoope each of these ice creams - 
+            ${icecream}. Fill up the mug with 
+            ${document.querySelector('input[name="rootBeer"]:checked').value} 
+            root beer. Enjoy!`;
+					document.getElementById("divRecipe").hidden = false;
+				}
+			}
+		</script>
+	</body>
+</html>
