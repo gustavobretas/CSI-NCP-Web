@@ -91,12 +91,10 @@
 					document.querySelectorAll('input[type="checkbox"]:checked').forEach((element) => {
 						icecream += `${icecream == "" ? "" : ", "}${element.id}`;
 					});
-					document.getElementById(
-						"divRecipe"
-					).innerHTML = `Recipe <br> In a glass mug, add one scoope each of these ice creams - 
-            ${icecream}. Fill up the mug with 
-            ${document.querySelector('input[name="rootBeer"]:checked').value} 
-            root beer. Enjoy!`;
+					document.getElementById("divRecipe")
+						.innerHTML = `Recipe <br> In a glass mug, add one scoope each of these ice creams - 
+            			${icecream}. Fill up the mug with 
+            			${document.querySelector('input[name="rootBeer"]:checked').value} root beer. Enjoy!`;
 					document.getElementById("divRecipe").hidden = false;
 				}
 			}
