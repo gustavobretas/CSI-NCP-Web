@@ -7,7 +7,6 @@
 		<meta name="author" content="Gustavo Bretas Eufrazio" />
 		<meta name="description" content="AD110 Project 4 Resolution" />
 		<title>AD110 Project 4</title>
-		<script type="text/javascript" src="statistics.js"></script>
 	</head>
 	<style>
 		section {
@@ -26,11 +25,12 @@
 		<label for="txtCalc">Number list:</label>
 		<input type="text" id="txtCalc" />
 		<section>
-			<button id="mean" onclick="btnMean()">Mean</button>
-			<button id="variance" onclick="btnVariance()">Variance</button>
-			<button id="StandardDeviation" onclick="btnStdDeviation()">Standard Deviation</button>
+			<button id="btnMean">Mean</button>
+			<button id="btnVariance">Variance</button>
+			<button id="btnStandardDeviation">Standard Deviation</button>
 		</section>
-		<label id="result"></label>
-		<label id="error"></label>		
+		<label id="output"></label>
+		<label id="error"></label>
+		<script type="text/javascript" src="statistics.js"></script>		
 	</body>
 </html>

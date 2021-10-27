@@ -1,73 +1,98 @@
-function validation(arrayCalc) {
-	let result = true;
+class NumberList {
+	constructor() {
+		this.registerElements();
+		this.registerHandlers();
+	};
 
-	document.getElementById("error").innerHTML = "";
-	document.getElementById("result").innerHTML = "";
+	registerElements() {
+		this.numList = document.getElementById("txtCalc");
+		this.errorMessage = document.getElementById("error");
+		this.outputMessage = document.getElementById("output")
+		this.btnMean = document.getElementById("btnMean")
+		this.btnVariance = document.getElementById("btnVariance")
+		this.btnStandardDeviation = document.getElementById("btnStandardDeviation")
+	};
 
-	for (let index = 0; index < arrayCalc.length; index++) {
-		if (isNaN(arrayCalc[index])) {
-			result = false;
+	registerHandlers() {
+		this.btnMean.onclick = (event) => this.btnMeanClick(event);
+		this.btnVariance.onclick = (event) => this.btnVarianceClick(event);
+		this.btnStandardDeviation.onclick = (event) => this.btnStandardDeviationClick(event);
+	};
+
+	validation(arrayCalc) {
+		let result = true;
+
+		this.errorMessage.innerHTML = "";
+		this.outputMessage.innerHTML = "";
+
+		for (let index = 0; index < arrayCalc.length; index++) {
+			if (isNaN(arrayCalc[index])) {
+				result = false;
+			}
 		}
-	}
 
-	return result;
-}
+		return result;
+	};
 
-function btnMean() {
-	const arrayCalc = document.getElementById("txtCalc").value.split(" ");
-
-	if (!validation(arrayCalc) || document.getElementById("txtCalc").value == "") {
-		document.getElementById("error").innerHTML = "Invalid Input";
-	} else {
+	calcMean(arr) {
 		let totalSum = 0;
-		for (let i = 0; i < arrayCalc.length; i++) {
-			if (arrayCalc[i] != "") {
-				totalSum += parseInt(arrayCalc[i]);
+		for (let i = 0; i < arr.length; i++) {
+			if (arr[i] != "") {
+				totalSum += parseFloat(arr[i]);
 			}
 		}
-		const result = totalSum / arrayCalc.length;
-		document.getElementById("result").innerHTML = `The Mean is: ${result}`;
-	}
-}
+		const result = totalSum / arr.length;
+		return result;
+	};
 
-function calcVariance(arr) {
-	let sum = 0;
-	let result = 0;
-	for (var i = 0; i < arr.length; i++) {
-		if (arr[i] != "") {
-			sum += parseFloat(arr[i]);
-		}
-	}
-
-	let v = 0;
-	if (arr.length > 1) {
-		var mean = sum / arr.length;
-		for (var j = 0; j < arr.length; j++) {
-			if (arr[j] != "") {
-				v += (arr[j] - mean) * (arr[j] - mean);
+	calcVariance(arr) {
+		let result = 0;
+		
+		let variance = 0;
+		if (arr.length > 1) {
+			var mean = this.calcMean(arr);
+			for (var j = 0; j < arr.length; j++) {
+				if (arr[j] != "") {
+					variance += (parseFloat(arr[j]) - mean) * (parseFloat(arr[j]) - mean);
+				}
 			}
+			result = variance / arr.length;
 		}
-		result = v / arr.length;
+		return result;
+	};
+
+	btnMeanClick(event) {
+		event.preventDefault();
+		const arrayCalc = this.numList.value.split(" ");
+	
+		if (!this.validation(arrayCalc) || this.numList.value == "") {
+			this.errorMessage.innerHTML = "Invalid Input";
+		} else {
+			this.outputMessage.innerHTML = `The Mean is: ${this.calcMean(arrayCalc).toFixed(2)}`;
+		}
+	};
+
+	btnVarianceClick(event) {
+		event.preventDefault();
+		const arrayCalc = this.numList.value.split(" ");
+	
+		if (!this.validation(arrayCalc) || this.numList.value == "") {
+			this.errorMessage.innerHTML = "Invalid Input";
+		} else {
+			this.outputMessage.innerHTML = `The Variance is: ${this.calcVariance(arrayCalc).toFixed(2)}`;
+		}
+	};
+
+	btnStandardDeviationClick(event) {
+		event.preventDefault();
+		const arrayCalc = this.numList.value.split(" ");
+	
+		if (!this.validation(arrayCalc) || this.numList.value == "") {
+			this.errorMessage.innerHTML = "Invalid Input";
+		} else {
+			this.outputMessage.innerHTML = `The Standard Deviation is: ${Math.sqrt(this.calcVariance(arrayCalc)).toFixed(2)}`;
+		}
 	}
-	return result;
-}
+};
 
-function btnVariance() {
-	const arrayCalc = document.getElementById("txtCalc").value.split(" ");
-
-	if (!validation(arrayCalc) || document.getElementById("txtCalc").value == "") {
-		document.getElementById("error").innerHTML = "Invalid Input";
-	} else {
-		document.getElementById("result").innerHTML = `The Variance is: ${calcVariance(arrayCalc)}`;
-	}
-}
-
-function btnStdDeviation() {
-	const arrayCalc = document.getElementById("txtCalc").value.split(" ");
-
-	if (!validation(arrayCalc) || document.getElementById("txtCalc").value == "") {
-		document.getElementById("error").innerHTML = "Invalid Input";
-	} else {
-		document.getElementById("result").innerHTML = `The Standard Deviation is: ${Math.sqrt(calcVariance(arrayCalc))}`;
-	}
-}
+new NumberList();
