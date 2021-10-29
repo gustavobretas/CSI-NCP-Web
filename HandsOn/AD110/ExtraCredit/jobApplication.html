@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Gustavo Eufrazio" />
+		<meta name="description" content="Web Programmer Job Application" />
+		<title>Web Programmer Job Application</title>
+	</head>
+	<style>
+		fieldset {
+			border: none;
+		}
+		button {
+			margin-top: 15px;
+		}
+	</style>
+	<body>
+		<h1>Web Programmer Job Application</h1>
+		<h2>We need the following skillset. Which skill do you possess?</h2>
+		<form onsubmit="formOnSubmit(event)">
+			<fieldset class="checkbox">
+				<input type="checkbox" name="skillset" value="HTML5" />
+				<label for="KnowHtml5">Know HTML5</label><br />
+				<input type="checkbox" name="skillset" value="CSS" />
+				<label for="knowCSS">Know CSS</label><br />
+				<input type="checkbox" name="skillset" value="Coffee Maker" />
+				<label for="coffeeMaker">Make a good Coffee</label> <br />
+				<button type="submit">Submit</button>
+			</fieldset>
+		</form>
+		<script>
+			function formOnSubmit() {
+				let skillSet = "";
+				document.querySelectorAll('input[type="checkbox"]:checked').forEach((element) => {
+					skillSet += `${skillSet == "" ? "" : ", "}${element.value}`;
+				});
+				if (!skillSet) {
+					alert(`I don't have any Skill!`);
+				} else {
+					alert(`I have the Skills: ${skillSet}`);
+				}
+			}
+		</script>
+	</body>
+</html>
