@@ -56,3 +56,18 @@ class Car:
 car = Car()
 car._speed = 400
 print(car._speed)
+
+v = [(0,0), (0,1),(1,0),(1,1)]
+index_list = [0,1,2,1,2,3]
+
+v_list = [i for i in range(2, len(index_list), 3)]
+indices = index_list
+triangle_list = [(v[indices[i-2]], v[indices[i-1]]) for i in v_list]
+
+print(triangle_list)
+
+x_axis = [0,2,4,8]
+y_axis = [10,20,30,40]
+
+graph_data = [(x,y) for x in x_axis for y in y_axis]
+print(graph_data)
