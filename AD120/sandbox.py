@@ -71,3 +71,10 @@ y_axis = [10,20,30,40]
 
 graph_data = [(x,y) for x in x_axis for y in y_axis]
 print(graph_data)
+
+person = {
+    "name": "Rich Brown",
+    "age": 56
+}
+
+print(person["gender"])
