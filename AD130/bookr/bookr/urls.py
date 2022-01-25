@@ -20,8 +20,5 @@ import reviews.views
 
 urlpatterns = {
     path('admin/', admin.site.urls),
-    # path('', reviews.views.index),
-    path('book-search/', reviews.views.book_search),
-    path('home_page/', reviews.views.home_page),
     path('', include('reviews.urls'))
 }
