@@ -22,3 +22,7 @@ def welcome_view(request):
     message = f"<html><h1>Welcome to Bookr!</h1> <p>" \
               f"{Book.objects.count()} books and counting!</p></html>"
     return HttpResponse(message)
+
+
+def welcome_view(request):
+    return render(request, 'base.html')
