@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 from pathlib import Path
 import environ as environ
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -62,7 +63,7 @@ ROOT_URLCONF = 'bookr.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'my_templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
