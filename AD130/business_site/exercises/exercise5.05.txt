@@ -1,0 +1,42 @@
+(venv) ➜  business_site git:(master) ✗ python3 manage.py findstatic
+usage: manage.py findstatic [-h] [--first] [--version] [-v {0,1,2,3}] [--settings SETTINGS] [--pythonpath PYTHONPATH] [--traceback] [--no-color] [--force-color]
+                            [--skip-checks]
+                            staticfile [staticfile ...]
+manage.py findstatic: error: Enter at least one label.
+(venv) ➜  business_site git:(master) python3 manage.py findstatic main.css
+Found 'main.css' here:
+  /Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/static/main.css
+(venv) ➜  business_site git:(master) python3 manage.py findstatic logo.png
+No matching file found for 'logo.png'.
+(venv) ➜  business_site git:(master) python3 manage.py findstatic landing/logo.png
+Found 'landing/logo.png' here:
+  /Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/landing/static/landing/logo.png
+(venv) ➜  business_site git:(master) python3 manage.py findstatic landing/logo.png missing-file.js main.css
+No matching file found for 'missing-file.js'.
+Found 'landing/logo.png' here:
+  /Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/landing/static/landing/logo.png
+Found 'main.css' here:
+  /Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/static/main.css
+(venv) ➜  business_site git:(master) python3 manage.py findstatic -v0 landing/logo.png missing-file.js main.css
+/Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/landing/static/landing/logo.png
+/Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/static/main.css
+(venv) ➜  business_site git:(master) python3 manage.py findstatic -v2 landing/logo.png missing-file.js main.css
+No matching file found for 'missing-file.js'.
+
+Looking in the following locations:
+  /Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/static
+  /Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/venv/lib/python3.9/site-packages/django/contrib/admin/static
+  /Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/landing/static
+Found 'landing/logo.png' here:
+  /Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/landing/static/landing/logo.png
+Looking in the following locations:
+  /Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/static
+  /Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/venv/lib/python3.9/site-packages/django/contrib/admin/static
+  /Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/landing/static
+Found 'main.css' here:
+  /Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/static/main.css
+Looking in the following locations:
+  /Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/static
+  /Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/venv/lib/python3.9/site-packages/django/contrib/admin/static
+  /Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/landing/static
+(venv) ➜  business_site git:(master)
