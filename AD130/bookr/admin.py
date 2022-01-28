@@ -8,4 +8,12 @@ class BookrAdminSite(admin.AdminSite):
 
 
 class BookAdmin(admin.ModelAdmin):
+    date_hierarchy = 'publication_date'
     list_display = ('title', 'isbn')
+    list_filter = ('publisher', 'publication_date')
+    search_fields = ('title', 'isbn', 'publisher__name')
+    exclude = ['date_edited']
+    # fieldsets = (('Linkage', {'fields': ('creator', 'book')}),
+    #              ('Review content',
+    #               {'fields': ('content', 'rating')}))
+
