@@ -59,7 +59,7 @@ class BookContributor(models.Model):
     book = models.ForeignKey \
         (Book, on_delete=models.CASCADE)
     contributor = models.ForeignKey \
-        (Contributor, on_delete=models.PROTECT)
+        (Contributor, on_delete=models.CASCADE)
     role = models.CharField \
         (verbose_name="The role this contributor has in the book.", \
          choices=ContributionRole.choices, \
