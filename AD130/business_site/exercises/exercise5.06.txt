@@ -1,0 +1,26 @@
+(venv) ➜  business_site git:(master) ✗ python3 manage.py collectstatic
+
+You have requested to collect static files at the destination
+location as specified in your settings:
+
+    /Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/static_production_test
+
+This will overwrite existing files!
+Are you sure you want to do this?
+
+Type 'yes' to continue, or 'no' to cancel: yes
+
+0 static files copied to '/Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/static_production_test', 130 unmodified, 130 post-processed.
+(venv) ➜  business_site git:(master) ✗ python3 manage.py collectstatic
+
+You have requested to collect static files at the destination
+location as specified in your settings:
+
+    /Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/static_production_test
+
+This will overwrite existing files!
+Are you sure you want to do this?
+
+Type 'yes' to continue, or 'no' to cancel: yes
+
+1 static file copied to '/Users/gustavobretas/www/CSI-NCP-Web/AD130/business_site/static_production_test', 129 unmodified, 98 post-processed.
