@@ -7,13 +7,14 @@
 <body>
 <form method="post">
     {% csrf_token %}
+    <h4>Method: {{ method }}</h4>
     <p>
         <label for="id_text_input">Text Input</label>
         <input id="id_text_input" type="text" name="text_input" value="" placeholder="Enter Some Text">
     </p>
     <p>
         <label for="id_password_input">Password Input</label>
-        <input id="id_password_input" type="text" name="password_input" value="" placeholder="Your Password">
+        <input id="id_password_input" type="password" name="password_input" value="" placeholder="Your Password">
     </p>
     <p>
         <input id="id_checkbox_input" type="checkbox" name="checkbox_on" value="Checkbox Checked" checked>
