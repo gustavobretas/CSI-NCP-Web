@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 
 # Create your views here.
-from form_example.forms import ExampleForm
+from .forms import ExampleForm
 
 
 def form_example(request):
@@ -12,5 +12,10 @@ def form_example(request):
 
 
 def view_function(request):
-    form = ExampleForm()
-    return render(request, "template.html", {"form": form})
+    if request.method == "POST":
+        form = ExampleForm(request.POST)
+    else:
+        form = ExampleForm()
+    for name in request.POST:
+        print("{}: {}".format(name, request.POST.getlist(name)))
+    return render(request, "template.html", {"method": request.method, "form": form})
