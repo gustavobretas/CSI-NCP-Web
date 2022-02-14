@@ -17,13 +17,14 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
+
 import reviews.views
 
 
 urlpatterns = [
+    path('accounts/', include(('django.contrib.auth.urls', 'auth'), namespace='accounts')),
     path('admin/', admin.site.urls),
     path('', reviews.views.index),
-    path('book-search/', reviews.views.book_search, name='book_search'),
     path('', include('reviews.urls'))
 ]
 
