@@ -17,17 +17,13 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
+
 from bookr.views import profile
-
-import reviews.views
-from bookr_admin.admin import admin_site
-
 
 urlpatterns = [
     path('accounts/', include(('django.contrib.auth.urls', 'auth'), namespace='accounts')),
     path('accounts/profile/', profile, name='profile'),
-    path('admin/', admin_site.urls),
-    path('', reviews.views.index),
+    path('admin/', admin.site.urls),
     path('', include('reviews.urls'))
 ]
 
